@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0A0A0A;
+    color: #ffffff;
+    overflow-x: hidden;
+    font-family: 'Google Sans', sans-serif;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: radial-gradient(circle at top right, #1a1a1a 0%, #000000 70%);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid #333;
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1rem;
+  }
+
+  .faq-item svg {
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item.active svg {
+    transform: rotate(45deg);
+  }
+
+  .font-handwriting {
+    font-family: 'Caveat', cursive;
+  }
+}
+
+@layer utilities {
+  @keyframes scroll-up {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll-up 30s linear infinite;
+  }
+
+  .animate-scroll-slow {
+    animation: scroll-up 45s linear infinite;
+  }
+
+  /* Mobile Menu Animations */
+  #mobile-menu {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  #mobile-menu.hidden {
+    display: none;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  #mobile-menu.flex {
+    display: flex;
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>WeDoLogos - Seu site pronto e hospedado por especialistas</title>
+  <meta name="description"
+    content="Criação de sites profissionais com WordPress, copywriting estratégico e hospedagem gerenciada. Tenha seu site pronto em 3 passos com a WeDoLogos." />
+  <meta name="keywords"
+    content="criação de sites, wordpress gerenciado, wedologos, site profissional, copywriting para sites, hospedagem de sites" />
+  <meta name="author" content="WeDoLogos" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sites.wedologos.com.br" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sites.wedologos.com.br" />
+  <meta property="og:title" content="WeDoLogos - Seu site pronto e hospedado por especialistas" />
+  <meta property="og:description"
+    content="Criação de sites profissionais com WordPress, copywriting estratégico e hospedagem gerenciada." />
+  <meta property="og:image" content="https://sites.wedologos.com.br/assets/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://sites.wedologos.com.br" />
+  <meta property="twitter:title" content="WeDoLogos - Seu site pronto e hospedado por especialistas" />
+  <meta property="twitter:description"
+    content="Criação de sites profissionais com WordPress, copywriting estratégico e hospedagem gerenciada." />
+  <meta property="twitter:image" content="https://sites.wedologos.com.br/assets/og-image.jpg" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WeDoLogos",
+      "url": "https://sites.wedologos.com.br",
+      "logo": "https://sites.wedologos.com.br/assets/logotipo-wedologos.svg",
+      "description": "Serviço especializado de criação de sites WordPress gerenciados.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-000-000-000",
+        "contactType": "customer service"
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    #mobile-menu {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .opacity-0 {
+      opacity: 0;
+    }
+
+    .opacity-100 {
+      opacity: 1;
+    }
+
+    .translate-x-full {
+      transform: translateX(100%);
+    }
+
+    .translate-x-0 {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+  <!-- BEGIN: MainHeader -->
+  <header class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/10">
+    <nav class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-12">
+        <div class="flex items-center gap-4" data-purpose="logo">
+          <img src="assets/logotipo-wedologos.svg" alt="Logotipo WeDoLogos">
+          <div class="relative ml-2">
+            <div
+              class="bg-black text-white text-[9px] font-bold px-2 py-0.5 rounded-sm tracking-widest flex items-center border border-white/20 leading-none h-[18px]">
+              <!-- Tooltip Tail (Left) -->
+              <div
+                class="absolute -left-[5px] top-1/2 -translate-y-1/2 w-2 h-2 bg-black border-l border-b border-white/20 rotate-45">
+              </div>
+              <span class="relative z-10">LANÇAMENTO</span>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center gap-8 text-md font-medium text-gray-300">
+          <a class="hover:text-brand-orange transition-colors" href="#">Plataforma</a>
+          <a class="hover:text-brand-orange transition-colors" href="#">Soluções</a>
+          <a class="hover:text-brand-orange transition-colors" href="#">Recursos</a>
+          <a class="hover:text-brand-orange transition-colors" href="#">Empresa</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <a class="hidden md:block text-sm font-medium px-4 py-2 hover:text-brand-orange transition-colors"
+          href="#">Login</a>
+        <a class="hidden md:block bg-brand-orange text-white text-sm font-bold px-6 py-2.5 rounded hover:bg-orange-600 transition-colors border border-[#F98356]"
+          href="#">Start for free</a>
+        <!-- Mobile Menu Toggle -->
+        <button id="menu-toggle" class="md:hidden p-2 text-white" aria-label="Abrir menu">
+          <svg fill="none" height="32" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="32">
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Overlay (Relocated for better accessibility) -->
+  <div id="mobile-menu"
+    class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl hidden flex-col p-8 items-center justify-start space-y-8 overflow-y-auto duration-300 ease-in-out opacity-0 translate-x-full transition-all">
+    <div class="w-full flex justify-between items-center mb-10">
+      <img src="assets/logotipo-wedologos.svg" alt="Logotipo WeDoLogos" class="h-8">
+      <button id="menu-close" class="p-2 text-white hover:text-brand-orange transition-colors" aria-label="Fechar menu">
+        <svg fill="none" height="32" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="32">
+          <path d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="flex flex-col items-center space-y-8 text-3xl font-bold py-10">
+      <a class="hover:text-brand-orange transition-colors mobile-link" href="#">Plataforma</a>
+      <a class="hover:text-brand-orange transition-colors mobile-link" href="#">Soluções</a>
+      <a class="hover:text-brand-orange transition-colors mobile-link" href="#">Recursos</a>
+      <a class="hover:text-brand-orange transition-colors mobile-link" href="#">Empresa</a>
+    </div>
+    <div class="flex flex-col items-center space-y-4 w-full pt-8 border-t border-white/10 max-w-sm mx-auto">
+      <a class="text-xl font-medium py-4 px-8 w-full text-center hover:text-brand-orange transition-colors"
+        href="#">Login</a>
+      <a class="bg-brand-orange text-white text-xl font-bold py-5 px-8 rounded-lg w-full text-center hover:bg-orange-600 transition-colors border border-[#F98356]"
+        href="#">Start for free</a>
+    </div>
+  </div>
+  <!-- END: MainHeader -->
+  <main>
+    <!-- BEGIN: HeroSection -->
+    <section class="relative pt-32 pb-24 md:pb-32 px-4 hero-gradient overflow-hidden" id="hero">
+      <canvas id="hero-particles" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+      <div class="absolute inset-0 z-0 opacity-15 pointer-events-none">
+        <div
+          class="absolute top-0 -left-10 w-96 h-96 bg-[#FF4601] rounded-full mix-blend-screen filter blur-[100px] opacity-40 animate-blob">
+        </div>
+        <div
+          class="absolute top-10 -right-10 w-96 h-96 bg-[#FF8C00] rounded-full mix-blend-screen filter blur-[100px] opacity-30 animate-blob animation-delay-2000">
+        </div>
+        <div
+          class="absolute -bottom-20 left-1/3 w-96 h-96 bg-[#D93B01] rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-blob animation-delay-4000">
+        </div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <div class="z-10">
+          <h1 class="text-4xl md:text-7xl font-bold leading-tight mb-6">
+            Seu site pronto e hospedado por especialistas.
+          </h1>
+          <p class="text-lg md:text-xl text-brand-textGray mb-10 max-w-xl leading-relaxed">
+            Deixe a parte técnica com nossos especialistas. Nós criamos, escrevemos e hospedamos seu site. Você só se
+            preocupa em gerir o sucesso do seu negócio.
+          </p>
+          <div class="flex flex-wrap items-center gap-8">
+            <button
+              class="bg-brand-orange text-white px-8 py-4 rounded font-bold text-lg hover:bg-orange-600 transition-all transform hover:scale-105 border border-[#F98356]">
+              Escolher meu plano
+            </button>
+            <a class="text-lg font-medium border-b border-brand-white pb-1 hover:text-brand-orange transition-colors"
+              href="#">
+              Tire suas dúvidas
+            </a>
+          </div>
+        </div>
+        <!-- Hero Mockups Overlay -->
+        <div class="relative min-h-[500px]" data-purpose="hero-visuals">
+          <div class="absolute top-0 right-0 w-full h-full flex items-center justify-center">
+            <img alt="Mockup de site profissional criado pela WeDoLogos" class="rounded-lg shadow-2xl"
+              src="assets/hero.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: HeroSection -->
+    <!-- BEGIN: PortfolioShowcase -->
+    <section class="h-screen bg-black relative overflow-hidden">
+      <!-- Gradient Overlays for smooth blend -->
+      <div
+        class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#0A0A0A] to-transparent z-20 pointer-events-none">
+      </div>
+      <div
+        class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0A0A0A] to-transparent z-20 pointer-events-none">
+      </div>
+
+      <div class="w-[120%] -ml-[10%]">
+        <div class="grid grid-cols-[80px_1fr_1fr_1fr_1fr_1fr] md:grid-cols-[1fr_3fr_3fr_3fr_3fr_3fr] gap-4">
+          <!-- Column 1 (Mobile - Narrow) -->
+          <div class="animate-scroll">
+            <div class="space-y-4 pb-4">
+              <img alt="Mobile Portfolio 1"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 5.jpg" />
+              <img alt="Mobile Portfolio 2"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 11.jpg" />
+              <img alt="Mobile Portfolio 3"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 13.jpg" />
+              <img alt="Mobile Portfolio 4"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 15.jpg" />
+            </div>
+            <div class="space-y-4 pb-4">
+              <img alt="Mobile Portfolio 1"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 5.jpg" />
+              <img alt="Mobile Portfolio 2"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 11.jpg" />
+              <img alt="Mobile Portfolio 3"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 13.jpg" />
+              <img alt="Mobile Portfolio 4"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 15.jpg" />
+            </div>
+          </div>
+
+          <!-- Column 2 (Desktop - Wide 1) -->
+          <div class="animate-scroll-slow pt-12">
+            <div class="space-y-4 pb-4">
+              <img alt="Desktop Portfolio 1"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 6.jpg" />
+              <img alt="Desktop Portfolio 2"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 7.jpg" />
+            </div>
+            <div class="space-y-4 pb-4">
+              <img alt="Desktop Portfolio 1"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 6.jpg" />
+              <img alt="Desktop Portfolio 2"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 7.jpg" />
+            </div>
+          </div>
+
+          <!-- Column 3 (Desktop - Wide 2) -->
+          <div class="animate-scroll">
+            <div class="space-y-4 pb-4">
+              <img alt="Desktop Portfolio 3"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 8.jpg" />
+              <img alt="Desktop Portfolio 4"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 9.jpg" />
+            </div>
+            <div class="space-y-4 pb-4">
+              <img alt="Desktop Portfolio 3"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 8.jpg" />
+              <img alt="Desktop Portfolio 4"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 9.jpg" />
+            </div>
+          </div>
+
+          <!-- Column 4 (Desktop - Wide 3) -->
+          <div class="animate-scroll-slow pt-24">
+            <div class="space-y-4 pb-4">
+              <img alt="Desktop Portfolio 5"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 10.jpg" />
+              <img alt="Desktop Portfolio 6"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 12.jpg" />
+            </div>
+            <div class="space-y-4 pb-4">
+              <img alt="Desktop Portfolio 5"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 10.jpg" />
+              <img alt="Desktop Portfolio 6"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 12.jpg" />
+            </div>
+          </div>
+
+          <!-- Column 5 (Desktop - Wide 4) -->
+          <div class="animate-scroll pt-16">
+            <div class="space-y-4 pb-4">
+              <img alt="Desktop Portfolio 7"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 14.jpg" />
+              <img alt="Desktop Portfolio 1"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 6.jpg" />
+            </div>
+            <div class="space-y-4 pb-4">
+              <img alt="Desktop Portfolio 7"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 14.jpg" />
+              <img alt="Desktop Portfolio 1"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 6.jpg" />
+            </div>
+          </div>
+
+          <!-- Column 6 (Desktop - Wide 5) -->
+          <div class="animate-scroll-slow pt-10">
+            <div class="space-y-4 pb-4">
+              <img alt="Desktop Portfolio 2"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 7.jpg" />
+              <img alt="Desktop Portfolio 4"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 9.jpg" />
+            </div>
+            <div class="space-y-4 pb-4">
+              <img alt="Desktop Portfolio 2"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 7.jpg" />
+              <img alt="Desktop Portfolio 4"
+                class="w-full rounded-lg border border-[#212121] transition-all duration-500"
+                src="assets/portfolio/image 9.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- END: PortfolioShowcase -->
+    <!-- BEGIN: FeaturesSection -->
+    <section class="py-24 md:py-32">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-10 md:mb-16">
+          <h2 class="text-3xl md:text-5xl font-bold max-w-xl">Tudo que o seu site precisa para decolar</h2>
+          <button
+            class="bg-brand-orange text-white px-8 py-4 rounded font-bold hover:bg-orange-600 transition-all transform hover:scale-105 border border-[#F98356] w-full md:w-auto">Escolher
+            meu plano</button>
+        </div>
+        <div class="grid md:grid-cols-3 gap-12">
+          <!-- Feature 1 -->
+          <div
+            class="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300">
+            <div
+              class="w-16 h-16 bg-brand-orange/20 flex items-center justify-center rounded-xl mb-6 group-hover:scale-110 transition-transform">
+              <img src="assets/icon1.svg" alt="DSenvolvimento de sites WordPress otimizados e velozes" class="w-8 h-8">
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold mb-4">Desenvolvimento especializado</h3>
+            <p class="text-base md:text-lg text-brand-textGray leading-relaxed">
+              Criamos uma estrutura em WordPress otimizada para velocidade, segurança e performance mobile. É a
+              tecnologia de ponta da WeDoLogos garantindo que seu site nunca seja um problema, mas uma solução.
+            </p>
+          </div>
+          <!-- Feature 2 -->
+          <div
+            class="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300">
+            <div
+              class="w-16 h-16 bg-brand-orange/20 flex items-center justify-center rounded-xl mb-6 group-hover:scale-110 transition-transform">
+              <img src="assets/icon2.svg" alt="Copywriting estratégico e textos focados em conversão" class="w-8 h-8">
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold mb-4">Copywriting estratégico</h3>
+            <p class="text-base md:text-lg text-brand-textGray leading-relaxed">
+              Um site bonito sem a mensagem certa é apenas um cartão de visitas. Nossa equipe escreve cada palavra com
+              foco em conversão, utilizando uma narrativa clara para guiar seu o seu próximo cliente a fechar negócio.
+            </p>
+          </div>
+          <!-- Feature 3 -->
+          <div
+            class="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300">
+            <div
+              class="w-16 h-16 bg-brand-orange/20 flex items-center justify-center rounded-xl mb-6 group-hover:scale-110 transition-transform">
+              <img src="assets/icon3.svg" alt="Painel administrativo intuitivo para gestão de sites" class="w-8 h-8">
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold mb-4">Painel administrativo</h3>
+            <p class="text-base md:text-lg text-brand-textGray leading-relaxed">
+              Esqueça a dependência de desenvolvedores para mudanças simples. Com o painel administrativo intuitivo e
+              nosso treinamento exclusivo em vídeo, você terá total liberdade para atualizar conteúdos, fotos e textos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: FeaturesSection -->
+    <!-- BEGIN: ProcessSection -->
+    <section class="py-24 md:py-32">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl md:text-5xl font-bold mb-10 md:mb-16">Do briefing ao site no ar em 3 passos simples</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Step 1 -->
+          <div class="space-y-6">
+            <div class="relative rounded-xl overflow-hidden bg-brand-gray border border-white/5">
+              <img alt="Briefing inicial para criação de site personalizado" class="w-full h-full object-cover"
+                src="assets/step1.jpg" />
+            </div>
+            <div class="flex items-start gap-3">
+              <div>
+                <h3 class="text-xl md:text-2xl font-bold mb-3 flex items-center gap-2">
+                  <svg fill="none" height="30" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="30">
+                    <path d="M7 17l9.2-9.2M17 17V7H7"></path>
+                  </svg>
+                  Selecione seu plano
+                </h3>
+                <p class="text-base md:text-lg text-brand-textGray leading-loose">
+                  Após escolher o pacote ideal, você preencherá um briefing rápido e enviará os ativos da sua marca
+                  (logo, fotos e referências). É aqui que transformamos suas ideias em um projeto estratégico.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="space-y-6">
+            <div class="relative rounded-xl overflow-hidden bg-brand-gray border border-white/5">
+              <img alt="Etapa de desenvolvimento WordPress e configuração de hospedagem"
+                class="w-full h-full object-cover" src="assets/step2.jpg" />
+            </div>
+            <div class="flex items-start gap-3">
+              <div>
+                <h3 class="text-xl md:text-2xl font-bold mb-3 flex items-center gap-2">
+                  <svg fill="none" height="30" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="30">
+                    <path d="M7 17l9.2-9.2M17 17V7H7"></path>
+                  </svg>
+                  Receba seu site
+                </h3>
+                <p class="text-base md:text-lg text-brand-textGray leading-loose">
+                  Enquanto nossos desenvolvedores configuram sua hospedagem, nossos copywriters criam os textos
+                  vendedores. Você recebe o projeto pronto, revisado e otimizado para conversão.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="space-y-6">
+            <div class="relative rounded-xl overflow-hidden bg-brand-gray border border-white/5">
+              <img alt="Website finalizado e treinamento de gestão para o cliente" class="w-full h-full object-cover"
+                src="assets/step3.jpg" />
+            </div>
+            <div class="flex items-start gap-3">
+              <div>
+                <h3 class="text-xl md:text-2xl font-bold mb-3 flex items-center gap-2">
+                  <svg fill="none" height="30" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="30">
+                    <path d="M7 17l9.2-9.2M17 17V7H7"></path>
+                  </svg>
+                  Aprenda a gerir seu site
+                </h3>
+                <p class="text-base md:text-lg text-brand-textGray leading-loose">
+                  Você receberá um treinamento exclusivo em vídeo. Nele, mostramos como navegar no seu novo painel e
+                  atualizar seu conteúdo com total segurança. Você assume o comando com a confiança de um especialista.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: ProcessSection -->
+    <!-- BEGIN: Testimonials -->
+    <section class="py-24 md:py-32">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl md:text-5xl font-bold mb-10 md:mb-16">Depoimentos de clientes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Image Testimonials -->
+          <div class="relative rounded-2xl overflow-hidden group">
+            <img alt="Verifone Client" class="w-full h-full object-cover min-h-[400px]" src="assets/depoimento1.jpg" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
+              <img alt="Logo" class="mb-6 opacity-80" src="assets/cliente1.svg" />
+              <p class="text-md mb-4">"One of my favorite moments was helping a purpose-driven brand go from we have no
+                idea how to present ourselves to we're obsessed with our website."</p>
+              <p class="font-bold">Gisele Mendes</p>
+              <p class="text-sm text-gray-400">Diretora de Produtos Petrolina</p>
+            </div>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden group">
+            <img alt="Verifone Client" class="w-full h-full object-cover min-h-[400px]"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzjT_Y2RpBURmf0Hey3tmRXB82jPXsAe3Y-qLY-CKns-OTISkcQbnHnEeyENB_h3YPlMD_QIOL9kpKmF7h9zUUkqNBpV9pwevC-MqrIM6zvg1NbpjGfkm7C8gVg0jCFvA-NlZ1YK-PvHTGhFDXpzpfcRQI3-mvOdE0jdG9jLeXYZ-zNecwGU0ccF3NdsdcZs-smNY6Aav81tPRepw6gRop2eNoxwWFrDR06Z4IE81401S2vbBBepVsEXEwnIIlPqNLet-gC6yGe1Re" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
+              <img alt="Logo" class="mb-6 opacity-80"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcL5bbBsgOq_pEOVWrwhw7PKUDLqgXfkp7o6z4e8b5fI1eq6VEAf2I9fznee-56cfwqIlSYdBVUuc7qsp8jihKJIVCrqutTZgLdHOpJkaE3yMfl3sAJGcAIhsagQVWQ1VwEewSXDJxSYCUvFI1O_qBvcpKu7sDQ0RmXDkru7UskN1TgJkTNSIKMeBWbkMg1w8bIOHHXEbtj1ULQBqG5ihtzgjYQW_4wL-RRrUfudgmxQU4pdZZ3-HHahQX6Q1wg7UEqrVHjBqOET8z" />
+              <p class="text-md mb-4">"One of my favorite moments was helping a purpose-driven brand go from we have no
+                idea how to present ourselves to we're obsessed with our website."</p>
+              <p class="font-bold">Gisele Mendes</p>
+              <p class="text-sm text-gray-400">Diretora de Produtos Petrolina</p>
+            </div>
+          </div>
+          <div class="relative rounded-2xl overflow-hidden group">
+            <img alt="Verifone Client" class="w-full h-full object-cover min-h-[400px]"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwwX6ygdtHnOoNYrOu7pRc5VJG-_bxnryTQ4HkZIb0JqhsJUqITVySK9XvWza6Upjld1DpyXE6b5zo4hXIF7hoX-uTH1q49ts4FzL7L2pywC9uT-nCnc821qf--6CPD7m6J5H82VOzLdfvZmCrrtzqDe6ykPr2pID1G3gCW6eLlqxlqKAYKqpC8W9Fc7ThaifEDpCngfbRihDvUvIycUQWfyA5270srzJGvFDvC1rHrbfSMXONaBg5UdfoEuoEpCDuwIB2M2YNsNKY" />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8 flex flex-col justify-end">
+              <img alt="Logo" class="mb-6 opacity-80"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9SYY-1H-iM-SVIPXVKWeZa8cC9PwTM8xfzBOz8yBWiuUApzK40QpenuOqD7NyNLrLox8DLmn9uLhOrGEcr2qgcxgIcJ6swspAM_iIXxpZG1bWU5bwG2PWk62t0Miypl3lNnfGkO89XBvfY3Qe-tBhMNTY9JANBvX85OUSXV3Nw6AUlRxlJl8z7LZSGpRuClLz-_vey3S3r-W2wB_GP2BrIukpuRSsZ0VsHKTTa5NDa1_u6mYbmwHFXU12_uC7AMINmjTrb339Abel" />
+              <p class="text-md mb-4">"One of my favorite moments was helping a purpose-driven brand go from we have no
+                idea how to present ourselves to we're obsessed with our website."</p>
+              <p class="font-bold">Gisele Mendes</p>
+              <p class="text-sm text-gray-400">Diretora de Produtos Petrolina</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: Testimonials -->
+    <!-- BEGIN: PricingPackages -->
+    <section class="py-24 md:py-32">
+      <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-12">
+        <div class="md:col-span-1">
+          <h2 class="text-3xl md:text-5xl font-bold mb-6 md:mb-8">Pacotes</h2>
+          <p class="text-base md:text-lg text-brand-textGray">Selecione o plano que melhor se adapta aos seus objetivos
+            atuais e
+            deixe que nossos especialistas cuidam do design, do conteúdo e da sua hospedagem.</p>
+
+          <!-- BEGIN: Support Floating Element -->
+          <div class="mt-12 relative">
+            <div
+              class="flex items-center gap-4 bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 max-w-sm group hover:bg-white/10 transition-all duration-300">
+              <div class="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=150&h=150"
+                  alt="Suporte" class="w-16 h-16 rounded-full object-cover border-2 border-brand-orange" />
+                <div class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-black"></div>
+              </div>
+              <div class="flex-1">
+                <h4 class="text-white font-bold text-lg">está com dúvidas?</h4>
+                <div class="flex items-center gap-2">
+                  <p class="text-brand-textGray text-sm">Fale com nossa equipe agora</p>
+                  <div class="flex items-center gap-1.5 ml-1">
+                    <span class="relative flex h-2 w-2">
+                      <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                    <span class="text-[10px] uppercase font-bold text-green-500 tracking-wider">estamos online</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hand drawn arrow pointing down -->
+              <div class="absolute -bottom-14 -right-10 pointer-events-none hidden lg:block">
+                <svg width="80" height="100" viewBox="0 0 80 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  class="text-brand-orange animate-pulse">
+                  <path d="M40 10C50 40 40 60 20 80" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-dasharray="5 5" />
+                  <path d="M10 70L20 82L32 75" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+                <span
+                  class="absolute top-1/2 -right-20 transform -translate-y-1/2 font-handwriting text-brand-orange text-lg whitespace-nowrap rotate-12">Chama
+                  no Zap!</span>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <button
+              class="mt-8 bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-[#20ba5a] transition-all transform hover:scale-105 border border-white/10 w-full max-w-sm">
+              <svg fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+                <path
+                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412 0 6.556-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.143c1.552.92 3.424 1.403 5.388 1.403 5.399 0 9.793-4.393 9.793-9.792 0-2.618-1.02-5.079-2.872-6.932s-4.314-2.871-6.931-2.871c-5.399 0-9.793 4.394-9.793 9.792 0 2.052.541 4.053 1.564 5.811l-.99 3.614 3.704-.971c-.001.001-.001.001 0 0zm10.702-7.014c-.11-.174-.406-.279-.796-.473s-2.308-1.137-2.665-1.266c-.356-.128-.616-.192-.876.192s-1.01 1.266-1.237 1.524-.454.289-.844.094c-.394-.197-1.662-.611-3.166-1.954-1.171-1.044-1.961-2.335-2.19-2.728s-.025-.607.173-.8c.178-.175.397-.473.595-.71.199-.237.265-.406.398-.677s.065-.503-.033-.697c-.098-.194-.876-2.112-1.201-2.898-.316-.763-.637-.66-.876-.672-.226-.011-.486-.013-.746-.013s-.682.097-1.038.486c-.356.388-1.362 1.332-1.362 3.246s1.394 3.759 1.589 4.017c.195.258 2.746 4.191 6.651 5.881 2.373 1.027 3.328 1.139 4.542.956.716-.109 2.194-.897 2.497-1.765.303-.869.303-1.611.211-1.765-.091-.154-.388-.245-.778-.44z" />
+              </svg>
+              Falar com Consultor
+            </button>
+          </div>
+          <!-- END: Support Floating Element -->
+        </div>
+        <!-- Starter Plan -->
+        <div class="bg-black/40 p-10 rounded-md border border-white/5 flex flex-col">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-2">Starter</h3>
+            <p class="text-md text-brand-textGray">Ideal para quem busca presença digital profissional com baixo
+              investimento</p>
+          </div>
+          <div class="mb-10">
+            <div class="flex items-baseline gap-2">
+              <span class="text-xl font-bold">R$</span>
+              <span class="text-5xl font-bold">990</span>
+            </div>
+            <p class="text-md text-gray-300 mt-2">Em até 10x no cartão</p>
+          </div>
+          <button
+            class="w-full py-4 bg-brand-orange rounded-lg font-bold mb-10 hover:bg-orange-600 transition-colors border border-[#F98356]">Contratar
+            agora</button>
+          <div class="space-y-6">
+            <div data-purpose="plan-features">
+              <p class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Inclui:</p>
+              <ul class="text-sm space-y-3 text-white">
+                <li>Home</li>
+                <li>Sobre a empresa</li>
+                <li>Serviços</li>
+                <li>Galeria de imagens</li>
+                <li>Fale Conosco</li>
+              </ul>
+            </div>
+            <div data-purpose="plan-tech">
+              <p class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Recursos e Funcionalidades:
+              </p>
+              <ul class="text-sm space-y-3 text-white">
+                <li>Integração com redes sociais</li>
+                <li>Formulário de contato</li>
+                <li>WhatsApp Floating</li>
+                <li>Treinamento em vídeo</li>
+                <li>Design profissional</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Pro Plan -->
+        <div class="bg-black/60 p-10 rounded-md border border-white/5 flex flex-col relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 bg-brand-orange text-[10px] font-bold px-4 py-1 uppercase tracking-tighter">
+            Mais Popular</div>
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold mb-2">Pro</h3>
+            <p class="text-md text-brand-textGray">Solução completa para empresas que exigem múltiplas páginas</p>
+          </div>
+          <div class="mb-10">
+            <div class="flex items-baseline gap-2">
+              <span class="text-xl font-bold">R$</span>
+              <span class="text-5xl font-bold">1.290</span>
+            </div>
+            <p class="text-md text-gray-300 mt-2">Em até 10x no cartão</p>
+          </div>
+          <button
+            class="w-full py-4 bg-brand-orange rounded-lg font-bold mb-10 hover:bg-orange-600 transition-colors border border-[#F98356]">Contratar
+            agora</button>
+          <div class="space-y-6">
+            <div data-purpose="plan-features">
+              <p class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Inclui:</p>
+              <ul class="text-sm space-y-3 text-white">
+                <li>Todas as páginas Starter</li>
+                <li>Notícias ou blog</li>
+                <li>Formulário de orçamento</li>
+                <li>Página estática extra</li>
+              </ul>
+            </div>
+            <div data-purpose="plan-tech">
+              <p class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Recursos e Funcionalidades:
+              </p>
+              <ul class="text-sm space-y-3 text-white">
+                <li>Todas as funcionalidades Starter</li>
+                <li>Hospedagem profissional</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: PricingPackages -->
+    <!-- BEGIN: FAQSection -->
+    <section class="py-24 md:py-32">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-16">
+        <div class="md:w-1/3">
+          <h2 class="text-3xl md:text-5xl font-bold mb-6 md:mb-8">Perguntas Frequentes</h2>
+          <p class="text-base md:text-lg text-brand-textGray">Respondemos às perguntas mais comuns para que você tome a
+            melhor
+            decisão para o seu negócio.</p>
+        </div>
+        <div class="md:w-2/3 divide-y divide-white/10">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item py-6 group cursor-pointer">
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-medium group-hover:text-brand-orange transition-colors">Eu serei o proprietário
+                definitivo do site e do domínio após a entrega?</span>
+              <svg fill="none" height="24" stroke="#FF4500" stroke-width="2" viewbox="0 0 24 24" width="24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+            </div>
+            <div class="faq-answer text-brand-textGray leading-relaxed">
+              Sim, o site e o domínio são registrados inteiramente em seu nome ou no de sua empresa. Você tem total
+              propriedade e autonomia sobre seus ativos digitais desde o primeiro dia.
+            </div>
+          </div>
+          <!-- FAQ Item 2 -->
+          <div class="faq-item py-6 group cursor-pointer">
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-medium group-hover:text-brand-orange transition-colors">Não entendo nada de
+                programação, conseguirei atualizar o site sozinho?</span>
+              <svg fill="none" height="24" stroke="#FF4500" stroke-width="2" viewbox="0 0 24 24" width="24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+            </div>
+            <div class="faq-answer text-brand-textGray leading-relaxed">
+              Com certeza! Desenvolvemos seu site em WordPress com um painel administrativo intuitivo. Além disso,
+              fornecemos treinamentos em vídeo exclusivos para que você possa alterar textos e imagens sem depender de
+              ninguém.
+            </div>
+          </div>
+          <!-- FAQ Item 3 -->
+          <div class="faq-item py-6 group cursor-pointer">
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-medium group-hover:text-brand-orange transition-colors">O que está incluído
+                exatamente na "copy estratégica" do site?</span>
+              <svg fill="none" height="24" stroke="#FF4500" stroke-width="2" viewbox="0 0 24 24" width="24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+            </div>
+            <div class="faq-answer text-brand-textGray leading-relaxed">
+              Nossa equipe de copywriters cria textos persuasivos focados em conversão. Isso inclui títulos cativantes,
+              descrições de serviços que vendem e chamadas para ação (CTAs) pensadas para guiar seu cliente até o
+              fechamento.
+            </div>
+          </div>
+          <!-- FAQ Item 4 -->
+          <div class="faq-item py-6 group cursor-pointer">
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-medium group-hover:text-brand-orange transition-colors">Eu já tenho um site ou
+                domínio, vocês fazem a migração para o novo projeto?</span>
+              <svg fill="none" height="24" stroke="#FF4500" stroke-width="2" viewbox="0 0 24 24" width="24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+            </div>
+            <div class="faq-answer text-brand-textGray leading-relaxed">
+              Sim, fazemos! Se você já possui um domínio ou um site antigo, nossa equipe técnica cuida de toda a
+              migração para a nova estrutura, garantindo que nada se perca no processo.
+            </div>
+          </div>
+          <!-- FAQ Item 5 -->
+          <div class="faq-item py-6 group cursor-pointer">
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-medium group-hover:text-brand-orange transition-colors">Como funciona a
+                hospedagem inclusa e terei custos adicionais com ela?</span>
+              <svg fill="none" height="24" stroke="#FF4500" stroke-width="2" viewbox="0 0 24 24" width="24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+            </div>
+            <div class="faq-answer text-brand-textGray leading-relaxed">
+              A hospedagem profissional está inclusa no seu plano, garantindo velocidade e segurança máxima. Não há
+              custos adicionais ocultos; tudo o que você precisa para manter seu site online com alta performance já
+              está contemplado.
+            </div>
+          </div>
+          <!-- FAQ Item 6 -->
+          <div class="faq-item py-6 group cursor-pointer">
+            <div class="flex justify-between items-center">
+              <span class="text-lg font-medium group-hover:text-brand-orange transition-colors">Quanto tempo leva, em
+                média, do preenchimento do briefing até o site no ar?</span>
+              <svg fill="none" height="24" stroke="#FF4500" stroke-width="2" viewbox="0 0 24 24" width="24">
+                <path d="M12 5v14M5 12h14"></path>
+              </svg>
+            </div>
+            <div class="faq-answer text-brand-textGray leading-relaxed">
+              O prazo médio é de 7 a 15 dias úteis. Esse tempo depende da agilidade no envio das informações do briefing
+              e das rodadas de feedback, mas trabalhamos sempre para colocar seu negócio no ar o quanto antes.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: FAQSection -->
+  </main>
+  <!-- BEGIN: Footer -->
+  <footer class="pt-24 pb-10 overflow-hidden relative">
+    <!-- Large Background Logo Pattern -->
+    <div class="pointer-events-none flex justify-end">
+      <img src="assets/logo-footer.svg" alt="WeDoLogos - Sua agência de criação de sites">
+    </div>
+    <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
+      <div class="w-full flex flex-col md:flex-row justify-between items-center border-t border-white/5 pt-10">
+        <p class="text-md text-white">©2026 WeDoLogos, Inc. All Rights reserved.</p>
+        <div class="flex gap-6 mt-6 md:mt-0">
+          <a class="text-white hover:text-white transition-colors" href="#"><svg fill="currentColor" height="20"
+              viewbox="0 0 24 24" width="20">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z">
+              </path>
+            </svg></a>
+          <a class="text-white hover:text-white transition-colors" href="#"><svg fill="currentColor" height="20"
+              viewbox="0 0 24 24" width="20">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+              </path>
+            </svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- END: Footer -->
+  <script>
+    const canvas = document.getElementById('hero-particles');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+
+    // Mouse state
+    const mouse = { x: null, y: null, radius: 150 };
+
+    window.addEventListener('mousemove', (e) => {
+      // Calculate mouse position relative to canvas
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+
+    function resize() {
+      if (!canvas.parentElement) return;
+      width = canvas.width = canvas.parentElement.offsetWidth;
+      height = canvas.height = canvas.parentElement.offsetHeight;
+      initParticles();
+    }
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.size = Math.random() * 2 + 1;
+        this.baseX = this.x;
+        this.baseY = this.y;
+        this.density = (Math.random() * 30) + 1;
+      }
+
+      update() {
+        // Organic movement
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Boundary wrapping
+        if (this.x < 0) this.x = width;
+        else if (this.x > width) this.x = 0;
+
+        if (this.y < 0) this.y = height;
+        else if (this.y > height) this.y = 0;
+
+        // Mouse interaction
+        if (mouse.x != null) {
+          let dx = mouse.x - this.x;
+          let dy = mouse.y - this.y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < mouse.radius) {
+            const forceDirectionX = dx / distance;
+            const forceDirectionY = dy / distance;
+            const force = (mouse.radius - distance) / mouse.radius;
+            const directionX = forceDirectionX * force * this.density;
+            const directionY = forceDirectionY * force * this.density;
+
+            this.x -= directionX;
+            this.y -= directionY;
+          }
+        }
+      }
+
+      draw() {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.15)'; // Subtle white
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      let numberOfParticles = (width * height) / 9000;
+      for (let i = 0; i < numberOfParticles; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    // Initialize after a short delay to ensure DOM is ready
+    setTimeout(() => {
+      window.addEventListener('resize', resize);
+      resize();
+      animate();
+    }, 100);
+
+    // FAQ Accordion Logic
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+
+        // Optional: Close other active items
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+          }
+        });
+
+        item.classList.toggle('active');
+      });
+    });
+
+    // Mobile Menu Logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    const toggleMenu = () => {
+      if (mobileMenu.classList.contains('hidden')) {
+        // Opening
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        // Trigger reflow to start transition
+        setTimeout(() => {
+          mobileMenu.classList.remove('opacity-0', 'translate-x-full');
+          mobileMenu.classList.add('opacity-100', 'translate-x-0');
+        }, 10);
+      } else {
+        // Closing
+        mobileMenu.classList.remove('opacity-100', 'translate-x-0');
+        mobileMenu.classList.add('opacity-0', 'translate-x-full');
+        // Wait for transition to finish before hiding
+        setTimeout(() => {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('flex');
+        }, 300);
+      }
+      document.body.classList.toggle('overflow-hidden');
+    };
+
+    menuToggle.addEventListener('click', toggleMenu);
+    menuClose.addEventListener('click', toggleMenu);
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', toggleMenu);
+    });
+  </script>
+</body>
+
+</html>
