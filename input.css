@@ -7,7 +7,7 @@
     background-color: #0A0A0A;
     color: #ffffff;
     overflow-x: hidden;
-    font-family: 'Google Sans', sans-serif;
+    font-family: "Google Sans", sans-serif;
   }
 }
 
@@ -50,6 +50,8 @@
   .font-handwriting {
     font-family: 'Caveat', cursive;
   }
+
+
 }
 
 @layer utilities {
@@ -57,6 +59,7 @@
     0% {
       transform: translateY(0);
     }
+
     100% {
       transform: translateY(-50%);
     }

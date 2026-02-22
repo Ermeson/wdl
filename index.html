@@ -13,6 +13,7 @@
   <meta name="author" content="WeDoLogos" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://sites.wedologos.com.br" />
+  <link rel="icon" type="image/x-icon" href="assets/favicon.png">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -48,8 +49,11 @@
   </script>
 
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+    rel="stylesheet">
   <style>
     #mobile-menu {
       transition: all 0.3s ease-in-out;
@@ -86,6 +90,14 @@
     .portfolio-image {
       width: 100%;
       height: auto;
+      -webkit-mask-image: linear-gradient(to top, transparent 0%, black 25%);
+      mask-image: linear-gradient(to top, transparent 0%, black 25%);
+    }
+
+    @media (min-width: 1024px) {
+      .hero-image-bleed {
+        margin-right: calc((100vw - 1280px) / -2 - 16px);
+      }
     }
   </style>
 </head>
@@ -157,7 +169,7 @@
   <!-- END: MainHeader -->
   <main>
     <!-- BEGIN: HeroSection -->
-    <section class="relative pt-32 pb-32 md:pb-48 px-4 hero-gradient overflow-hidden" id="hero">
+    <section class="relative pt-32 pb-56 md:pb-80 px-4 hero-gradient overflow-hidden p-bottom-80" id="hero">
       <canvas id="hero-particles" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
       <div class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div class="z-10">
@@ -180,9 +192,10 @@
           </div>
         </div>
         <!-- Hero Mockups Overlay -->
-        <div class="relative min-h-[500px]" data-purpose="hero-visuals">
-          <div class="absolute top-0 right-0 w-full h-full flex items-center justify-center opacity-10">
-            <img alt="Mockup de site profissional criado pela WeDoLogos" class="rounded-lg shadow-2xl"
+        <div class="relative min-h-[500px] -mr-4 lg:mr-0 hero-image-bleed" data-purpose="hero-visuals">
+          <div class="absolute top-0 right-0 w-full h-full flex items-center justify-end opacity-10">
+            <img alt="Mockup de site profissional criado pela WeDoLogos"
+              class="rounded-l-lg shadow-2xl max-w-none w-auto h-full lg:h-auto lg:w-[120%] object-right"
               src="assets/hero.svg" />
           </div>
         </div>
@@ -190,7 +203,7 @@
     </section>
     <!-- END: HeroSection -->
     <!-- BEGIN: PortfolioShowcase -->
-    <section class="h-screen bg-black relative overflow-hidden pt-24 md:pt-32">
+    <section class="h-screen bg-[#0A0A0A] relative overflow-hidden pt-40 md:pt-64">
       <!-- Gradient Overlays for smooth blend -->
       <div
         class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#0A0A0A] to-transparent z-20 pointer-events-none">
@@ -395,7 +408,8 @@
                   </linearGradient>
                 </defs>
                 <!-- Papel / documento -->
-                <rect x="5" y="6" width="14" height="14" rx="1" fill="none" stroke="url(#copyGradient)" stroke-width="0.75">
+                <rect x="5" y="6" width="14" height="14" rx="1" fill="none" stroke="url(#copyGradient)"
+                  stroke-width="0.75">
                   <animate attributeName="stroke-width" values="0.75;1.1;0.75" dur="1.8s" repeatCount="indefinite" />
                 </rect>
                 <!-- Linhas de texto -->
@@ -403,17 +417,22 @@
                   <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite" />
                 </line>
                 <line x1="8" y1="14" x2="16" y2="14" stroke="#ffffff" stroke-linecap="round" stroke-width="1">
-                  <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite" begin="0.2s" />
+                  <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite"
+                    begin="0.2s" />
                 </line>
                 <line x1="8" y1="18" x2="12" y2="18" stroke="#ffffff" stroke-linecap="round" stroke-width="1">
-                  <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite" begin="0.4s" />
+                  <animate attributeName="stroke-opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite"
+                    begin="0.4s" />
                 </line>
                 <!-- Caneta -->
-                <path d="M18 5 L18 8 L12 14 L10 12 L16 6 Z" fill="none" stroke="url(#copyGradient)" stroke-linejoin="round" stroke-width="0.75">
-                  <animate attributeName="stroke-width" values="0.75;1.1;0.75" dur="1.8s" repeatCount="indefinite" begin="0.3s" />
+                <path d="M18 5 L18 8 L12 14 L10 12 L16 6 Z" fill="none" stroke="url(#copyGradient)"
+                  stroke-linejoin="round" stroke-width="0.75">
+                  <animate attributeName="stroke-width" values="0.75;1.1;0.75" dur="1.8s" repeatCount="indefinite"
+                    begin="0.3s" />
                 </path>
                 <line x1="10" y1="12" x2="12" y2="14" stroke="#ffffff" stroke-linecap="round" stroke-width="0.8">
-                  <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite" begin="0.5s" />
+                  <animate attributeName="stroke-opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite"
+                    begin="0.5s" />
                 </line>
               </svg>
             </div>
@@ -435,23 +454,31 @@
                     <stop offset="100%" stop-color="#FF4500" />
                   </linearGradient>
                 </defs>
-                <rect x="4" y="4" width="7" height="7" rx="1" fill="none" stroke="url(#panelGradient)" stroke-width="0.75">
+                <rect x="4" y="4" width="7" height="7" rx="1" fill="none" stroke="url(#panelGradient)"
+                  stroke-width="0.75">
                   <animate attributeName="stroke-width" values="0.75;1.1;0.75" dur="1.8s" repeatCount="indefinite" />
                 </rect>
-                <rect x="13" y="4" width="7" height="7" rx="1" fill="none" stroke="url(#panelGradient)" stroke-width="0.75">
-                  <animate attributeName="stroke-width" values="0.75;1.1;0.75" dur="1.8s" repeatCount="indefinite" begin="0.2s" />
+                <rect x="13" y="4" width="7" height="7" rx="1" fill="none" stroke="url(#panelGradient)"
+                  stroke-width="0.75">
+                  <animate attributeName="stroke-width" values="0.75;1.1;0.75" dur="1.8s" repeatCount="indefinite"
+                    begin="0.2s" />
                 </rect>
-                <rect x="4" y="13" width="7" height="7" rx="1" fill="none" stroke="url(#panelGradient)" stroke-width="0.75">
-                  <animate attributeName="stroke-width" values="0.75;1.1;0.75" dur="1.8s" repeatCount="indefinite" begin="0.4s" />
+                <rect x="4" y="13" width="7" height="7" rx="1" fill="none" stroke="url(#panelGradient)"
+                  stroke-width="0.75">
+                  <animate attributeName="stroke-width" values="0.75;1.1;0.75" dur="1.8s" repeatCount="indefinite"
+                    begin="0.4s" />
                 </rect>
-                <rect x="13" y="13" width="7" height="7" rx="1" fill="none" stroke="url(#panelGradient)" stroke-width="0.75">
-                  <animate attributeName="stroke-width" values="0.75;1.1;0.75" dur="1.8s" repeatCount="indefinite" begin="0.6s" />
+                <rect x="13" y="13" width="7" height="7" rx="1" fill="none" stroke="url(#panelGradient)"
+                  stroke-width="0.75">
+                  <animate attributeName="stroke-width" values="0.75;1.1;0.75" dur="1.8s" repeatCount="indefinite"
+                    begin="0.6s" />
                 </rect>
                 <circle cx="7.5" cy="7.5" r="1.5" fill="#ffffff">
                   <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite" />
                 </circle>
                 <circle cx="16.5" cy="7.5" r="1.5" fill="#ffffff">
-                  <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite" begin="0.3s" />
+                  <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite"
+                    begin="0.3s" />
                 </circle>
               </svg>
             </div>
@@ -596,27 +623,48 @@
           <!-- BEGIN: Support Floating Element -->
           <div class="mt-12 relative">
             <div
-              class="flex flex-col gap-5 rounded-2xl border border-white/10 bg-white/5 p-6 max-w-sm group hover:bg-white/[0.07] transition-all duration-300">
-              <div class="flex items-center gap-4">
-                <div class="relative flex-shrink-0">
-                  <img
-                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=150&h=150"
-                    alt="Suporte" class="w-14 h-14 rounded-full object-cover border border-white/10" />
-                  <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-[#0A0A0A]"></span>
+              class="flex flex-col gap-6 rounded-3xl border border-white/10 bg-white/5 p-8 max-w-sm group hover:bg-white/[0.08] transition-all duration-500 hover:border-white/20">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between">
+                  <div class="flex -space-x-3">
+                    <img
+                      src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=150&h=150"
+                      alt="Team Member 1"
+                      class="w-8 h-8 rounded-full border-2 border-[#0A0A0A] object-cover relative z-30" />
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150"
+                      alt="Team Member 2"
+                      class="w-8 h-8 rounded-full border-2 border-[#0A0A0A] object-cover relative z-20" />
+                    <img
+                      src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=150&h=150"
+                      alt="Team Member 3"
+                      class="w-8 h-8 rounded-full border-2 border-[#0A0A0A] object-cover relative z-10" />
+                  </div>
+                  <div
+                    class="flex items-center gap-2 bg-green-500/10 px-3 py-1 rounded-full border border-green-500/20">
+                    <div class="relative flex h-2 w-2">
+                      <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </div>
+                    <span class="text-green-500 text-[10px] font-bold uppercase tracking-wider">Online</span>
+                  </div>
                 </div>
-                <div class="flex-1 min-w-0">
-                  <h4 class="text-white font-bold text-lg mb-0.5">Está com dúvidas?</h4>
-                  <p class="text-brand-textGray text-sm">Fale com nossa equipe agora</p>
+                <div class="space-y-1">
+                  <h4 class="text-white font-bold text-xl tracking-tight">Está com dúvida?</h4>
+                  <p class="text-brand-textGray text-md leading-relaxed">
+                    Nossa equipe está disponível para atende-lo(a) agora mesmo.
+                  </p>
                 </div>
               </div>
-              <button
-                class="w-full rounded-xl bg-[#25D366] text-white px-6 py-3.5 font-bold text-base flex items-center justify-center gap-2.5 hover:bg-[#20ba5a] transition-colors border border-white/10">
-                <svg fill="currentColor" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+              <a href="https://wa.me/5500000000000"
+                class="w-full rounded-2xl bg-[#25D366] text-white px-6 py-4.5 font-bold text-lg flex items-center justify-center gap-3 hover:bg-[#20ba5a] transition-all duration-300 shadow-[0_10px_20px_-10px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_25px_-10px_rgba(37,211,102,0.5)] hover:scale-[1.02] active:scale-[0.98]">
+                <svg fill="currentColor" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412 0 6.556-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.143c1.552.92 3.424 1.403 5.388 1.403 5.399 0 9.793-4.393 9.793-9.792 0-2.618-1.02-5.079-2.872-6.932s-4.314-2.871-6.931-2.871c-5.399 0-9.793 4.394-9.793 9.792 0 2.052.541 4.053 1.564 5.811l-.99 3.614 3.704-.971c-.001.001-.001.001 0 0zm10.702-7.014c-.11-.174-.406-.279-.796-.473s-2.308-1.137-2.665-1.266c-.356-.128-.616-.192-.876.192s-1.01 1.266-1.237 1.524-.454.289-.844.094c-.394-.197-1.662-.611-3.166-1.954-1.171-1.044-1.961-2.335-2.19-2.728s-.025-.607.173-.8c.178-.175.397-.473.595-.71.199-.237.265-.406.398-.677s.065-.503-.033-.697c-.098-.194-.876-2.112-1.201-2.898-.316-.763-.637-.66-.876-.672-.226-.011-.486-.013-.746-.013s-.682.097-1.038.486c-.356.388-1.362 1.332-1.362 3.246s1.394 3.759 1.589 4.017c.195.258 2.746 4.191 6.651 5.881 2.373 1.027 3.328 1.139 4.542.956.716-.109 2.194-.897 2.497-1.765.303-.869.303-1.611.211-1.765-.091-.154-.388-.245-.778-.44z" />
                 </svg>
                 Falar com Consultor
-              </button>
+              </a>
             </div>
           </div>
           <!-- END: Support Floating Element -->
