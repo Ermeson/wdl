@@ -191,6 +191,33 @@ img.left-negative {
   margin-left: -20px !important;
 }
 
+/* Estilização para listas aninhadas nos cards de planos */
+[data-purpose="plan-features"] ul ul,
+[data-purpose="plan-tech"] ul ul {
+  margin-left: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 1rem;
+}
+
+[data-purpose="plan-features"] ul ul li,
+[data-purpose="plan-tech"] ul ul li {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.825rem;
+  position: relative;
+  margin-bottom: 0.25rem;
+}
+
+/* Opcional: marcador sutil para os sub-itens */
+[data-purpose="plan-features"] ul ul li::before,
+[data-purpose="plan-tech"] ul ul li::before {
+  content: "—";
+  position: absolute;
+  left: -0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
 /*
 1. Add the correct height in Firefox.
 2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
