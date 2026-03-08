@@ -762,9 +762,9 @@
             </div>
             <p class="text-md text-gray-300 mt-2">Em até 10x no cartão</p>
           </div>
-          <a href="https://payment-link-v3.pagar.me/pl_63Jrw7Rg8YdKezIV7I6rpEq2emAOboDy" target="_blank"
+          <button type="button" onclick="openHireModal('Starter')"
             class="w-full py-4 bg-brand-orange rounded-lg font-bold mb-10 hover:bg-orange-600 transition-colors border border-[#F98356] text-center inline-block">Contratar
-            agora</a>
+            agora</button>
           <div class="space-y-6">
             <div data-purpose="plan-features">
               <p class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Inclui:</p>
@@ -813,9 +813,9 @@
             </div>
             <p class="text-md text-gray-300 mt-2">Em até 10x no cartão</p>
           </div>
-          <a href="https://payment-link-v3.pagar.me/pl_AYGaOZVK9eQDlq1iaeCWvMX8NpL6qzR3" target="_blank"
+          <button type="button" onclick="openHireModal('Pro')"
             class="w-full py-4 bg-brand-orange rounded-lg font-bold mb-10 hover:bg-orange-600 transition-colors border border-[#F98356] text-center inline-block">Contratar
-            agora</a>
+            agora</button>
           <div class="space-y-6">
             <div data-purpose="plan-features">
               <p class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Inclui:</p>
@@ -1173,6 +1173,170 @@
     }
 
     shufflePortfolioImages();
+  </script>
+  <!-- BEGIN: Hire Modal -->
+  <div id="hire-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeHireModal()" aria-label="Fechar modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-2" style="width: 24;">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+          </svg>
+
+          Conexão Segura
+        </div>
+        <h2 class="modal-title">Inicie seu projeto</h2>
+        <p class="modal-subtitle">Preencha os dados técnicos abaixo para que nossa equipe entre em contato e valide sua
+          solicitação.</p>
+      </div>
+
+      <form class="modal-form" id="hire-form">
+        <input type="hidden" id="selected-plan" name="plano" value="">
+
+        <div class="form-group">
+          <label class="form-label" for="nome">Nome Completo</label>
+          <input type="text" id="nome" name="nome" class="form-input" placeholder="Ex: João Silva" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="whatsapp">Telefone / WhatsApp</label>
+          <input type="tel" id="whatsapp" name="whatsapp" class="form-input" placeholder="(00) 00000-0000" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="empresa">Nome da Empresa</label>
+          <input type="text" id="empresa" name="empresa" class="form-input" placeholder="Sua Empresa Ltda" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="segmento">Segmento de Atuação</label>
+          <input type="text" id="segmento" name="segmento" class="form-input"
+            placeholder="Ex: Tecnologia, Saúde, Educação" required>
+        </div>
+
+        <button type="submit" class="modal-submit">
+          Avançar para a próxima etapa
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+        <div class="modal-progress-container">
+          <div class="modal-progress-info">
+            <span>Passo 1 de 2: Identificação</span>
+            <span>50% concluído</span>
+          </div>
+          <div class="modal-progress-track">
+            <div class="modal-progress-bar"></div>
+          </div>
+        </div>
+
+      </form>
+
+      <div class="form-security-footer">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        Os dados coletados são utilizados exclusivamente para o contato comercial da WeDoLogos.
+      </div>
+    </div>
+  </div>
+  <!-- END: Hire Modal -->
+
+  <script>
+    // Hire Modal Logic
+    const hireModal = document.getElementById('hire-modal');
+    const hireForm = document.getElementById('hire-form');
+    const selectedPlanInput = document.getElementById('selected-plan');
+
+    function openHireModal(planName) {
+      if (planName) {
+        selectedPlanInput.value = planName;
+      }
+      hireModal.classList.add('active');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeHireModal() {
+      hireModal.classList.remove('active');
+      document.body.classList.remove('modal-open');
+    }
+
+    // Close modal on click outside
+    hireModal.addEventListener('click', (e) => {
+      if (e.target === hireModal) {
+        closeHireModal();
+      }
+    });
+
+    // Handle form submission
+    hireForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzx_1SirDGhqmWh2XXtmW5fmWUeWNK7oMP6z9XhjbGbNzIL34DSsJ6bN7JUCaH2_ExQYA/exec';
+
+      const paymentLinks = {
+        'Starter': 'https://payment-link-v3.pagar.me/pl_63Jrw7Rg8YdKezIV7I6rpEq2emAOboDy',
+        'Pro': 'https://payment-link-v3.pagar.me/pl_AYGaOZVK9eQDlq1iaeCWvMX8NpL6qzR3'
+      };
+
+      const formData = new FormData(hireForm);
+      const data = Object.fromEntries(formData.entries());
+      const selectedPlan = data.plano;
+
+      const submitBtn = hireForm.querySelector('.modal-submit');
+      const originalText = submitBtn.innerHTML;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <div class="dot-wave">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        Processando...
+      `;
+
+      try {
+        // Enviar para o Google Sheets (usando mode: no-cors se necessário por limitações do GAS, 
+        // mas idealmente o script do GAS deve retornar os headers corretos para CORS)
+        if (GOOGLE_SCRIPT_URL !== 'SUA_URL_DO_GOOGLE_APPS_SCRIPT_AQUI') {
+          await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors', // Importante para Google Apps Script
+            cache: 'no-cache',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+        }
+
+        // Pequeno delay para garantir que o usuário perceba a ação antes do redirect
+        setTimeout(() => {
+          const redirectURL = paymentLinks[selectedPlan] || paymentLinks['Starter'];
+          window.location.href = redirectURL;
+        }, 800);
+
+      } catch (error) {
+        console.error('Erro ao enviar dados:', error);
+        alert('Ocorreu um erro ao processar sua solicitação. Por favor, tente novamente.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
+    });
   </script>
 </body>
 
